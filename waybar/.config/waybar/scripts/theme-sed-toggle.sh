@@ -30,7 +30,7 @@ fi
 if [[ "$CURRENT_THEME" == "nord" ]]; then
     # Currently nord, switch to orange
     sed -i 's|@import url("./nord-theme.css");|@import url("./orange-theme.css");|g' "$STYLE_FILE"
-    sed -i 's|~/Downloads/wallpapers/.*|~/Downloads/wallpapers/city.jpg|g' "$HYPRPAPER_FILE"
+    sed -i 's|~/Downloads/wallpapers/.*|~/Downloads/wallpapers/fallout.jpg|g' "$HYPRPAPER_FILE"
     echo "theme=orange" > "$STATE_FILE"
     echo "Switched to Orange theme"
 elif [[ "$CURRENT_THEME" == "orange" ]]; then
