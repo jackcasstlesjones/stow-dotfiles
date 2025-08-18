@@ -153,6 +153,7 @@ button:hover {
 #clock,
 #battery,
 #cpu,
+#bluetooth,
 #memory,
 #disk,
 #temperature,
@@ -218,7 +219,6 @@ button:hover {
   /* font-size: 16px; */
   /* Nord3 - Polar Night */
 }
-
 
 /* Nord Theme */
 #battery.charging,
