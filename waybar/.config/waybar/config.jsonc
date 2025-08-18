@@ -10,6 +10,7 @@
         "~/.config/waybar/modules/cpu-mem-temp.jsonc",
         "~/.config/waybar/modules/audio.jsonc",
         "~/.config/waybar/modules/theme-toggle.jsonc",
+        "~/.config/waybar/modules/bluetooth.jsonc"
     ],
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
@@ -35,6 +36,7 @@
         "mpd",
         // "idle_inhibitor",
         "pulseaudio",
+        "bluetooth",
         "network",
         "power-profiles-daemon",
         "cpu",
@@ -79,7 +81,7 @@
         // "icon-size": 21,
         "spacing": 10,
         // "icons": {
-          "blueman": "bluetooth",
+        "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
