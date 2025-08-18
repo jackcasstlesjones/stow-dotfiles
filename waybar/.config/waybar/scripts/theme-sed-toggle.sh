@@ -18,6 +18,7 @@ WAYBAR_DIR="$HOME/.config/waybar"
 STYLE_FILE="$WAYBAR_DIR/style.css"
 STATE_FILE="$WAYBAR_DIR/.theme-state"
 HYPRPAPER_FILE="$HOME/.config/hypr/hyprpaper.conf"
+KITTY_CONFIG="$HOME/.config/kitty/kitty.conf"
 
 # Read current theme from state file
 if [[ -f "$STATE_FILE" ]]; then
@@ -31,22 +32,26 @@ if [[ "$CURRENT_THEME" == "nord" ]]; then
     # Currently nord, switch to orange
     sed -i 's|@import url("./nord-theme.css");|@import url("./orange-theme.css");|g' "$STYLE_FILE"
     sed -i 's|~/Downloads/wallpapers/.*|~/Downloads/wallpapers/fallout.jpg|g' "$HYPRPAPER_FILE"
+    sed -i 's|include ./nord-theme.conf|include ./orange-theme.conf|g' "$KITTY_CONFIG"
     echo "theme=orange" > "$STATE_FILE"
     echo "Switched to Orange theme"
 elif [[ "$CURRENT_THEME" == "orange" ]]; then
     # Currently orange, switch to scooz
     sed -i 's|@import url("./orange-theme.css");|@import url("./pink-theme.css");|g' "$STYLE_FILE"
     sed -i 's|~/Downloads/wallpapers/.*|~/Downloads/wallpapers/anime.png|g' "$HYPRPAPER_FILE"
+    sed -i 's|include ./orange-theme.conf|include ./pink-theme.conf|g' "$KITTY_CONFIG"
     echo "theme=scooz" > "$STATE_FILE"
     echo "Switched to Scooz theme"
 else
     # Currently scooz (or unknown), switch to nord
     sed -i 's|@import url("./pink-theme.css");|@import url("./nord-theme.css");|g' "$STYLE_FILE"
     sed -i 's|~/Downloads/wallpapers/.*|~/Downloads/wallpapers/city2.png|g' "$HYPRPAPER_FILE"
+    sed -i 's|include ./pink-theme.conf|include ./nord-theme.conf|g' "$KITTY_CONFIG"
     echo "theme=nord" > "$STATE_FILE"
     echo "Switched to Nord theme"
 fi
 
-# Reload waybar CSS and hyprpaper
+# Reload waybar CSS, hyprpaper, and kitty
 pkill -SIGUSR2 waybar
 pkill hyprpaper && hyprpaper &
+kitty @ load-config
