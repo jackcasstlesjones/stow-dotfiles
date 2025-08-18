@@ -3,6 +3,7 @@
     "include": [
         "~/.config/waybar/modules/workspaces.jsonc",
         "~/.config/waybar/modules/clock.jsonc",
+        "~/.config/waybar/modules/hostname.jsonc",
         "~/.config/waybar/modules/idle-inhibitor.jsonc",
         "~/.config/waybar/modules/keyboard.jsonc",
         "~/.config/waybar/modules/network.jsonc",
@@ -23,6 +24,7 @@
     "modules-left": [
         // "hyprland/workspaces",
         "clock",
+        "custom/hostname",
         "custom/media"
     ],
     "modules-center": [
